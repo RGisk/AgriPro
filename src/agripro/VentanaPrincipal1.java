@@ -13,14 +13,14 @@ import java.awt.Toolkit;
  *
  * @author jquesadaabeijon
  */
-public class VentanaPrincipal extends javax.swing.JFrame {
+public class VentanaPrincipal1 extends javax.swing.JFrame {
 
 //    int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 //    int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
     /**
      * Creates new form VentanaPrincipal
      */
-    public VentanaPrincipal() {
+    public VentanaPrincipal1() {
         initComponents();
 
 //        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
@@ -48,7 +48,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AgriPro - Venta de productos agrícolas y/o ecológicos");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelfondo.setBackground(new java.awt.Color(255, 255, 255));
@@ -78,7 +77,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btFrut.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btFrut.setForeground(new java.awt.Color(255, 255, 255));
         btFrut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/frutas.jpg"))); // NOI18N
-        btFrut.setText("Alimentación");
+        btFrut.setText("FRUTAS");
         btFrut.setContentAreaFilled(false);
         btFrut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btFrut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -134,20 +133,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 //        new VentanaPrincipal();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaPrincipal1().setVisible(true);
             }
         });
     }
