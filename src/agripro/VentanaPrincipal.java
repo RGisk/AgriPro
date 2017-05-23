@@ -41,14 +41,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelfondo = new javax.swing.JPanel();
-        btHort = new javax.swing.JButton();
+        btBebidas = new javax.swing.JButton();
         btFrut = new javax.swing.JButton();
         titulo = new javax.swing.JLabel();
+        btCarne = new javax.swing.JButton();
+        btHort = new javax.swing.JButton();
+        btFrut1 = new javax.swing.JButton();
+        btFrut2 = new javax.swing.JButton();
+        btCarne1 = new javax.swing.JButton();
+        btFrut3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AgriPro - Venta de productos agrícolas y/o ecológicos");
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1366, 768));
+        setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelfondo.setBackground(new java.awt.Color(255, 255, 255));
@@ -56,10 +63,72 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelfondo.setMaximumSize(new java.awt.Dimension(1366, 768));
         panelfondo.setLayout(null);
 
+        btBebidas.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btBebidas.setForeground(new java.awt.Color(255, 255, 255));
+        btBebidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bebidas.jpeg"))); // NOI18N
+        btBebidas.setText("BEBIDAS");
+        btBebidas.setContentAreaFilled(false);
+        btBebidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btBebidas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btBebidas.setMaximumSize(new java.awt.Dimension(220, 150));
+        btBebidas.setMinimumSize(new java.awt.Dimension(220, 150));
+        btBebidas.setPreferredSize(new java.awt.Dimension(220, 150));
+        btBebidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btBebidasActionPerformed(evt);
+            }
+        });
+        panelfondo.add(btBebidas);
+        btBebidas.setBounds(560, 280, 220, 150);
+        btBebidas.getAccessibleContext().setAccessibleParent(this);
+
+        btFrut.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btFrut.setForeground(new java.awt.Color(255, 255, 255));
+        btFrut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cereales.jpeg"))); // NOI18N
+        btFrut.setText("<html><p>CEREALES Y LEGUMBRES</p></html>");
+        btFrut.setContentAreaFilled(false);
+        btFrut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFrut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btFrut.setMaximumSize(new java.awt.Dimension(290, 250));
+        btFrut.setMinimumSize(new java.awt.Dimension(290, 250));
+        btFrut.setPreferredSize(new java.awt.Dimension(220, 150));
+        btFrut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFrutActionPerformed(evt);
+            }
+        });
+        panelfondo.add(btFrut);
+        btFrut.setBounds(560, 90, 220, 150);
+
+        titulo.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("CATEGORÍAS");
+        titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelfondo.add(titulo);
+        titulo.setBounds(560, 10, 220, 70);
+
+        btCarne.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btCarne.setForeground(new java.awt.Color(255, 255, 255));
+        btCarne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aceites.jpeg"))); // NOI18N
+        btCarne.setText("ACEITES");
+        btCarne.setContentAreaFilled(false);
+        btCarne.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btCarne.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btCarne.setMaximumSize(new java.awt.Dimension(220, 150));
+        btCarne.setMinimumSize(new java.awt.Dimension(220, 150));
+        btCarne.setPreferredSize(new java.awt.Dimension(220, 150));
+        btCarne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCarneActionPerformed(evt);
+            }
+        });
+        panelfondo.add(btCarne);
+        btCarne.setBounds(820, 280, 220, 150);
+
         btHort.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btHort.setForeground(new java.awt.Color(255, 255, 255));
         btHort.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hortalizas.jpg"))); // NOI18N
-        btHort.setText("HORTALIZAS");
+        btHort.setText("<html><p>VERDURAS Y HORTALIZAS</p></html>");
         btHort.setContentAreaFilled(false);
         btHort.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btHort.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -73,41 +142,89 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelfondo.add(btHort);
         btHort.setBounds(300, 90, 220, 150);
-        btHort.getAccessibleContext().setAccessibleParent(this);
 
-        btFrut.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
-        btFrut.setForeground(new java.awt.Color(255, 255, 255));
-        btFrut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/frutas.jpg"))); // NOI18N
-        btFrut.setText("Alimentación");
-        btFrut.setContentAreaFilled(false);
-        btFrut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btFrut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btFrut.setMaximumSize(new java.awt.Dimension(290, 250));
-        btFrut.setMinimumSize(new java.awt.Dimension(290, 250));
-        btFrut.setPreferredSize(new java.awt.Dimension(220, 150));
-        btFrut.addActionListener(new java.awt.event.ActionListener() {
+        btFrut1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btFrut1.setForeground(new java.awt.Color(255, 255, 255));
+        btFrut1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/frutas.jpg"))); // NOI18N
+        btFrut1.setText("FRUTAS");
+        btFrut1.setContentAreaFilled(false);
+        btFrut1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFrut1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btFrut1.setMaximumSize(new java.awt.Dimension(290, 250));
+        btFrut1.setMinimumSize(new java.awt.Dimension(290, 250));
+        btFrut1.setPreferredSize(new java.awt.Dimension(220, 150));
+        btFrut1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btFrutActionPerformed(evt);
+                btFrut1ActionPerformed(evt);
             }
         });
-        panelfondo.add(btFrut);
-        btFrut.setBounds(40, 90, 220, 150);
+        panelfondo.add(btFrut1);
+        btFrut1.setBounds(40, 90, 220, 150);
 
-        titulo.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
-        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo.setText("Categorías");
-        titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelfondo.add(titulo);
-        titulo.setBounds(380, 10, 220, 70);
+        btFrut2.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btFrut2.setForeground(new java.awt.Color(255, 255, 255));
+        btFrut2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/panaderia.jpeg"))); // NOI18N
+        btFrut2.setText("PANADERÍA");
+        btFrut2.setContentAreaFilled(false);
+        btFrut2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFrut2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btFrut2.setMaximumSize(new java.awt.Dimension(290, 250));
+        btFrut2.setMinimumSize(new java.awt.Dimension(290, 250));
+        btFrut2.setPreferredSize(new java.awt.Dimension(220, 150));
+        btFrut2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFrut2ActionPerformed(evt);
+            }
+        });
+        panelfondo.add(btFrut2);
+        btFrut2.setBounds(300, 280, 220, 150);
+
+        btCarne1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btCarne1.setForeground(new java.awt.Color(255, 255, 255));
+        btCarne1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/carnes.jpg"))); // NOI18N
+        btCarne1.setText("CARNES");
+        btCarne1.setContentAreaFilled(false);
+        btCarne1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btCarne1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btCarne1.setMaximumSize(new java.awt.Dimension(220, 150));
+        btCarne1.setMinimumSize(new java.awt.Dimension(220, 150));
+        btCarne1.setPreferredSize(new java.awt.Dimension(220, 150));
+        btCarne1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCarne1ActionPerformed(evt);
+            }
+        });
+        panelfondo.add(btCarne1);
+        btCarne1.setBounds(820, 90, 220, 150);
+
+        btFrut3.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btFrut3.setForeground(new java.awt.Color(255, 255, 255));
+        btFrut3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/panaderia.jpeg"))); // NOI18N
+        btFrut3.setText("PANADERÍA");
+        btFrut3.setContentAreaFilled(false);
+        btFrut3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFrut3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btFrut3.setMaximumSize(new java.awt.Dimension(290, 250));
+        btFrut3.setMinimumSize(new java.awt.Dimension(290, 250));
+        btFrut3.setPreferredSize(new java.awt.Dimension(220, 150));
+        btFrut3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFrut3ActionPerformed(evt);
+            }
+        });
+        panelfondo.add(btFrut3);
+        btFrut3.setBounds(40, 280, 220, 150);
 
         getContentPane().add(panelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btHortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHortActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btHortActionPerformed
+    private void btBebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBebidasActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_btBebidasActionPerformed
 
     private void btFrutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrutActionPerformed
         
@@ -116,6 +233,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_btFrutActionPerformed
+
+    private void btCarneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarneActionPerformed
+
+        
+        
+    }//GEN-LAST:event_btCarneActionPerformed
+
+    private void btHortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHortActionPerformed
+        
+        VentanaVerduras hort = new VentanaVerduras();
+        hort.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_btHortActionPerformed
+
+    private void btFrut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrut1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btFrut1ActionPerformed
+
+    private void btFrut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrut2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btFrut2ActionPerformed
+
+    private void btCarne1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarne1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btCarne1ActionPerformed
+
+    private void btFrut3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrut3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btFrut3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,7 +300,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btBebidas;
+    private javax.swing.JButton btCarne;
+    private javax.swing.JButton btCarne1;
     private javax.swing.JButton btFrut;
+    private javax.swing.JButton btFrut1;
+    private javax.swing.JButton btFrut2;
+    private javax.swing.JButton btFrut3;
     private javax.swing.JButton btHort;
     private javax.swing.JPanel panelfondo;
     private javax.swing.JLabel titulo;
