@@ -55,13 +55,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setTitle("AgriPro - Venta de productos agrícolas y/o ecológicos");
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1366, 768));
-        setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelfondo.setBackground(new java.awt.Color(255, 255, 255));
         panelfondo.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 51)), new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 0), 1, true)));
         panelfondo.setMaximumSize(new java.awt.Dimension(1366, 768));
-        panelfondo.setLayout(null);
 
         btBebidas.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btBebidas.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,9 +76,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btBebidasActionPerformed(evt);
             }
         });
-        panelfondo.add(btBebidas);
-        btBebidas.setBounds(560, 280, 220, 150);
-        btBebidas.getAccessibleContext().setAccessibleParent(this);
 
         btFrut.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btFrut.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,15 +92,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btFrutActionPerformed(evt);
             }
         });
-        panelfondo.add(btFrut);
-        btFrut.setBounds(560, 90, 220, 150);
 
-        titulo.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        titulo.setFont(new java.awt.Font("Century Schoolbook L", 1, 36)); // NOI18N
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titulo.setText("CATEGORÍAS");
         titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        panelfondo.add(titulo);
-        titulo.setBounds(560, 10, 220, 70);
 
         btCarne.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btCarne.setForeground(new java.awt.Color(255, 255, 255));
@@ -122,13 +113,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btCarneActionPerformed(evt);
             }
         });
-        panelfondo.add(btCarne);
-        btCarne.setBounds(820, 280, 220, 150);
 
         btHort.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btHort.setForeground(new java.awt.Color(255, 255, 255));
         btHort.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hortalizas.jpg"))); // NOI18N
         btHort.setText("<html><p>VERDURAS Y HORTALIZAS</p></html>");
+        btHort.setActionCommand("<html><p>VERDURAS Y HORTALIZAS</p></html>");
+        btHort.setAutoscrolls(true);
         btHort.setContentAreaFilled(false);
         btHort.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btHort.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -140,8 +131,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btHortActionPerformed(evt);
             }
         });
-        panelfondo.add(btHort);
-        btHort.setBounds(300, 90, 220, 150);
 
         btFrut1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btFrut1.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,19 +141,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btFrut1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btFrut1.setMaximumSize(new java.awt.Dimension(290, 250));
         btFrut1.setMinimumSize(new java.awt.Dimension(290, 250));
-        btFrut1.setPreferredSize(new java.awt.Dimension(220, 150));
+        btFrut1.setPreferredSize(new java.awt.Dimension(250, 180));
         btFrut1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btFrut1ActionPerformed(evt);
             }
         });
-        panelfondo.add(btFrut1);
-        btFrut1.setBounds(40, 90, 220, 150);
 
         btFrut2.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btFrut2.setForeground(new java.awt.Color(255, 255, 255));
-        btFrut2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/panaderia.jpeg"))); // NOI18N
-        btFrut2.setText("PANADERÍA");
+        btFrut2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lacteos.jpeg"))); // NOI18N
+        btFrut2.setText("LÁCTEOS");
         btFrut2.setContentAreaFilled(false);
         btFrut2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btFrut2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -176,8 +163,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btFrut2ActionPerformed(evt);
             }
         });
-        panelfondo.add(btFrut2);
-        btFrut2.setBounds(300, 280, 220, 150);
 
         btCarne1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btCarne1.setForeground(new java.awt.Color(255, 255, 255));
@@ -194,8 +179,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btCarne1ActionPerformed(evt);
             }
         });
-        panelfondo.add(btCarne1);
-        btCarne1.setBounds(820, 90, 220, 150);
 
         btFrut3.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btFrut3.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,8 +195,60 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btFrut3ActionPerformed(evt);
             }
         });
-        panelfondo.add(btFrut3);
-        btFrut3.setBounds(40, 280, 220, 150);
+
+        javax.swing.GroupLayout panelfondoLayout = new javax.swing.GroupLayout(panelfondo);
+        panelfondo.setLayout(panelfondoLayout);
+        panelfondoLayout.setHorizontalGroup(
+            panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelfondoLayout.createSequentialGroup()
+                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelfondoLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btFrut3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btFrut1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(86, 86, 86)
+                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btHort, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btFrut2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(108, 108, 108)
+                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btFrut, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btCarne, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79)
+                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btCarne1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btBebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelfondoLayout.createSequentialGroup()
+                        .addGap(541, 541, 541)
+                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(237, 237, 237))
+        );
+        panelfondoLayout.setVerticalGroup(
+            panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelfondoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btCarne1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btFrut1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelfondoLayout.createSequentialGroup()
+                            .addGap(2, 2, 2)
+                            .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btHort, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btFrut, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btBebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCarne, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btFrut2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btFrut3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(236, 236, 236))
+        );
+
+        btBebidas.getAccessibleContext().setAccessibleParent(this);
 
         getContentPane().add(panelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
