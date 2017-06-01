@@ -14,12 +14,12 @@ import javax.swing.table.TableColumnModel;
  *
  * @author jquesadaabeijon
  */
-public class VentanaFrutas extends javax.swing.JFrame {
+public class VentanaCarne extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaFrutas
      */
-    public VentanaFrutas() {
+    public VentanaCarne() {
         initComponents();
         
         TableColumnModel columnModel = tabla.getColumnModel();
@@ -59,7 +59,6 @@ public class VentanaFrutas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Frutas ecológicas");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -69,18 +68,18 @@ public class VentanaFrutas extends javax.swing.JFrame {
 
         icon.setBackground(new java.awt.Color(255, 255, 255));
         icon.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/frutas2.jpg"))); // NOI18N
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/carne.jpeg"))); // NOI18N
         icon.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        description.setText("<html><p>Las frutas ecológicas proceden de una agricultura menos extensiva y que además no utiliza elementos químicos ni semillas transgénicas o modificadas genéticamente. En su lugar se recurre a técnicas integradas en el sistema agrario que contribuyen a preservar las especies y variedades autóctonas y la diversidad biológica, tanto agrícola como silvestre.</p></html>");
+        description.setText("<html><p>La cría de animales ecológicos supone un conjunto de cambios en los elementos productivos (alimentación, manejo, sanidad, etc.) destinados a producir una carne ecológica de alta calidad mejorando la situación medio ambiental, el bienestar animal y la prevención sanitaria de enfermedades, consiguiendo una carne saludable y de sabor único.</p></html>");
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Caja de frutas ecológicas variadas", "1 caja de 5Kg",  new Float(24.0),  new Float(4.8), "de 3 a 5 días"},
-                {"Manzana ecológica variedad \"Royal Gala\"", "1 caja de 5Kg",  new Float(20.0),  new Float(4.0), "de 3 a 5 días"},
-                {"Limón ecológico variedad \"fino\"", "1 caja de 5Kg",  new Float(16.0),  new Float(3.2), "de 3 a 5 días"},
-                {"Plátano ecológico", "1 caja de 5Kg",  new Float(22.0),  new Float(4.4), "de 3 a 5 días"},
-                {"Manzana ecológica variedad \"Granny Smith\"", "1 caja de 5Kg",  new Float(20.0),  new Float(4.0), "de 3 a 5 días"}
+                {"", "", null, null, ""},
+                {"", "", null, null, ""},
+                {"", "", null, null, ""},
+                {"", "", null, null, ""},
+                {"", "", null, null, "de 3 a 5 días"}
             },
             new String [] {
                 "Producto", "Cantidad", "Precio", "Precio/Kg", "Plazo de entrega"
@@ -162,7 +161,7 @@ public class VentanaFrutas extends javax.swing.JFrame {
                         .addComponent(icon)
                         .addGap(136, 136, 136)
                         .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 327, Short.MAX_VALUE)
                         .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,7 +183,6 @@ public class VentanaFrutas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(icon)
                     .addGroup(panelfondoLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -194,10 +192,11 @@ public class VentanaFrutas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)))
+                        .addComponent(jButton4))
+                    .addComponent(icon))
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addContainerGap(433, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
@@ -230,6 +229,9 @@ public class VentanaFrutas extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaFrutas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

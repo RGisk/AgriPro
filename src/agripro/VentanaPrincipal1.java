@@ -110,7 +110,7 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
 
     private void btFrutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrutActionPerformed
         
-        VentanaFrutas frut = new VentanaFrutas();
+        VentanaCarne frut = new VentanaCarne();
         frut.setVisible(true);
         this.dispose();
         

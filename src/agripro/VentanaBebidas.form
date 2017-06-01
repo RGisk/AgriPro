@@ -7,9 +7,6 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1366, 768]"/>
-    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1366, 768]"/>
     </Property>
@@ -58,38 +55,41 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="955" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                           <Component id="icon" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                           <Component id="description" min="-2" pref="499" max="-2" attributes="0"/>
-                          <EmptySpace pref="227" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel1" min="-2" pref="151" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                       </Group>
                   </Group>
+                  <EmptySpace pref="327" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" pref="151" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -99,7 +99,6 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="description" min="-2" pref="180" max="-2" attributes="0"/>
-                      <Component id="icon" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jLabel1" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -111,10 +110,16 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="icon" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="103" max="-2" attributes="0"/>
-                  <EmptySpace pref="301" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="88" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="359" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -127,14 +132,14 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/frutas2.jpg"/>
+              <Image iconType="3" name="/imagenes/bebida.jpg"/>
             </Property>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="description">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;Las frutas ecol&#xf3;gicas proceden de una agricultura menos extensiva y que adem&#xe1;s no utiliza elementos qu&#xed;micos ni semillas transg&#xe9;nicas o modificadas gen&#xe9;ticamente. En su lugar se recurre a t&#xe9;cnicas integradas en el sistema agrario que contribuyen a preservar las especies y variedades aut&#xf3;ctonas y la diversidad biol&#xf3;gica, tanto agr&#xed;cola como silvestre.&lt;/p&gt;&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;&#xa;Bebidas espirituosas son aquellas bebidas alcoh&#xf3;licas destinadas al consumo humano, con cualidades organol&#xe9;pticos particulares, con una graduaci&#xf3;n m&#xed;nima de 15%vol.&#xa;&#xa;Se trata, as&#xed;, de productos como el brandy, el whisky, el ron, la ginebra, el vodka, o los licores, entre otros.&lt;/p&gt;&lt;/html&gt;"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -147,40 +152,25 @@
             <Component class="javax.swing.JTable" name="tabla">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="5">
+                  <Table columnCount="5" rowCount="4">
                     <Column editable="false" title="Producto" type="java.lang.String">
-                      <Data value="Caja de frutas ecol&#xf3;gicas variadas"/>
-                      <Data value="Manzana ecol&#xf3;gica variedad &quot;Royal Gala&quot;"/>
-                      <Data value="Lim&#xf3;n ecol&#xf3;gico variedad &quot;fino&quot;"/>
-                      <Data value="Pl&#xe1;tano ecol&#xf3;gico"/>
-                      <Data value="Manzana ecol&#xf3;gica variedad &quot;Granny Smith&quot;"/>
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value=""/>
                     </Column>
                     <Column editable="false" title="Cantidad" type="java.lang.String">
-                      <Data value="1 caja de 5Kg"/>
-                      <Data value="1 caja de 5Kg"/>
-                      <Data value="1 caja de 5Kg"/>
-                      <Data value="1 caja de 5Kg"/>
-                      <Data value="1 caja de 5Kg"/>
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value=""/>
                     </Column>
-                    <Column editable="false" title="Precio" type="java.lang.Float">
-                      <Data value="24.0"/>
-                      <Data value="20.0"/>
-                      <Data value="16.0"/>
-                      <Data value="22.0"/>
-                      <Data value="20.0"/>
-                    </Column>
-                    <Column editable="false" title="Precio/Kg" type="java.lang.Float">
-                      <Data value="4.8"/>
-                      <Data value="4.0"/>
-                      <Data value="3.2"/>
-                      <Data value="4.4"/>
-                      <Data value="4.0"/>
-                    </Column>
+                    <Column editable="false" title="Precio" type="java.lang.Float"/>
+                    <Column editable="false" title="Precio/Kg" type="java.lang.Float"/>
                     <Column editable="false" title="Plazo de entrega" type="java.lang.String">
-                      <Data value="de 3 a 5 d&#xed;as"/>
-                      <Data value="de 3 a 5 d&#xed;as"/>
-                      <Data value="de 3 a 5 d&#xed;as"/>
-                      <Data value="de 3 a 5 d&#xed;as"/>
+                      <Data value=""/>
+                      <Data value=""/>
+                      <Data value=""/>
                       <Data value="de 3 a 5 d&#xed;as"/>
                     </Column>
                   </Table>
@@ -306,6 +296,26 @@
               <Color blue="0" green="99" red="66" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Bebidas"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor de Mano"/>
+            </Property>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton8">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Schoolbook L" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="99" red="66" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="A&#xf1;adir al carro"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

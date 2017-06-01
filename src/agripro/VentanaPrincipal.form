@@ -7,9 +7,6 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1366, 768]"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -107,8 +104,7 @@
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="btCarne1" min="-2" pref="180" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btFrut1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -116,6 +112,7 @@
                                   <Component id="btFrut" alignment="3" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="btFrut1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="55" max="32767" attributes="0"/>
@@ -251,7 +248,6 @@
               <Image iconType="3" name="/imagenes/hortalizas.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;VERDURAS Y HORTALIZAS&lt;/p&gt;&lt;/html&gt;"/>
-            <Property name="actionCommand" type="java.lang.String" value="&lt;html&gt;&lt;p&gt;VERDURAS Y HORTALIZAS&lt;/p&gt;&lt;/html&gt;"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
