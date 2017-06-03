@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agripro;
+package categorias;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,12 +14,12 @@ import javax.swing.table.TableColumnModel;
  *
  * @author jquesadaabeijon
  */
-public class VentanaPan extends javax.swing.JFrame {
+public class VentanaBebidas extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaFrutas
      */
-    public VentanaPan() {
+    public VentanaBebidas() {
         initComponents();
         
         TableColumnModel columnModel = tabla.getColumnModel();
@@ -69,17 +69,17 @@ public class VentanaPan extends javax.swing.JFrame {
 
         icon.setBackground(new java.awt.Color(255, 255, 255));
         icon.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pan.jpg"))); // NOI18N
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bebida.jpg"))); // NOI18N
         icon.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        description.setText("<html><p>El pan ecológico está elaborado con ingredientes no modificados genéticamente. Sabor tradicional distinto al de los panes industriales.\n\nEl pan, parte importante de la dieta en casi todo el mundo, es uno de los alimentos que más consumimos, por lo que debemos de prestar especial atención a sus ingredientes por la gran influencia que puede tener en nuestra salud.\n\nPor ser beneficosos para la salud y por sus sabores a tradición os recomendamos nuestros panes ecológicos. Para el desayuno, la comida, la cena, o para cualquier ocasión.</p></html>");
+        description.setText("<html><p>\nBebidas espirituosas son aquellas bebidas alcohólicas destinadas al consumo humano, con cualidades organolépticos particulares, con una graduación mínima de 15%vol.\n\nSe trata, así, de productos como el brandy, el whisky, el ron, la ginebra, el vodka, o los licores, entre otros.</p></html>");
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Caja de verduras y hortalizas", "1 caja de 5Kg",  new Float(24.0),  new Float(4.8), "de 3 a 5 días"},
-                {"Patata nueva", "1 caja de 5Kg",  new Float(15.0),  new Float(3.0), "de 3 a 5 días"},
-                {"Cebollas ", "1 caja de 5Kg",  new Float(13.5),  new Float(2.7), "de 3 a 5 días"},
-                {"Puerros", "1 caja de 5Kg",  new Float(17.5),  new Float(3.5), "de 3 a 5 días"}
+                {"", "", null, null, ""},
+                {"", "", null, null, ""},
+                {"", "", null, null, ""},
+                {"", "", null, null, "de 3 a 5 días"}
             },
             new String [] {
                 "Producto", "Cantidad", "Precio", "Precio/Kg", "Plazo de entrega"
@@ -162,14 +162,14 @@ public class VentanaPan extends javax.swing.JFrame {
             panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelfondoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
                     .addGroup(panelfondoLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
+                        .addGap(62, 62, 62)
                         .addComponent(icon)
-                        .addGap(88, 88, 88)
+                        .addGap(74, 74, 74)
                         .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 323, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 327, Short.MAX_VALUE)
                 .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,9 +192,10 @@ public class VentanaPan extends javax.swing.JFrame {
         panelfondoLayout.setVerticalGroup(
             panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelfondoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelfondoLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
@@ -205,15 +206,13 @@ public class VentanaPan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4))
                     .addGroup(panelfondoLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(icon))))
-                .addGap(26, 26, 26)
+                        .addGap(29, 29, 29)
+                        .addComponent(icon)))
+                .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(jButton8)
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addContainerGap(359, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
@@ -238,13 +237,13 @@ public class VentanaPan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaBebidas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaBebidas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaBebidas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaBebidas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -258,7 +257,7 @@ public class VentanaPan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPan().setVisible(true);
+                new VentanaBebidas().setVisible(true);
             }
         });
     }

@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agripro;
+package menu;
 
+import categorias.VentanaCarne;
+import categorias.VentanaVerduras;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -54,7 +56,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AgriPro - Venta de productos agrícolas y/o ecológicos");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelfondo.setBackground(new java.awt.Color(255, 255, 255));

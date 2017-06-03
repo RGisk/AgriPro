@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agripro;
+package categorias;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,12 +14,12 @@ import javax.swing.table.TableColumnModel;
  *
  * @author jquesadaabeijon
  */
-public class VentanaFrutas extends javax.swing.JFrame {
+public class VentanaCereales extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaFrutas
      */
-    public VentanaFrutas() {
+    public VentanaCereales() {
         initComponents();
         
         TableColumnModel columnModel = tabla.getColumnModel();
@@ -55,11 +55,11 @@ public class VentanaFrutas extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Frutas ecológicas");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -69,18 +69,17 @@ public class VentanaFrutas extends javax.swing.JFrame {
 
         icon.setBackground(new java.awt.Color(255, 255, 255));
         icon.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/frutas2.jpg"))); // NOI18N
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cereal.jpg"))); // NOI18N
         icon.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        description.setText("<html><p>Las frutas ecológicas proceden de una agricultura menos extensiva y que además no utiliza elementos químicos ni semillas transgénicas o modificadas genéticamente. En su lugar se recurre a técnicas integradas en el sistema agrario que contribuyen a preservar las especies y variedades autóctonas y la diversidad biológica, tanto agrícola como silvestre.</p></html>");
+        description.setText("<html><p> Los cereales son una base importante de nuestra alimentación. Si son de cultivo ecológico, sus beneficios son aún mayores.\n\nLos cereales nos aportan hidratos de carbono, minerales y vitaminas de gran calidad para nuestro organismo.\n\nPara tener más energía y cuidar de vuestra salud, os ofrecemos nuestra gran variedad de cereales ecológicos.</p></html>");
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Caja de frutas ecológicas variadas", "1 caja de 5Kg",  new Float(24.0),  new Float(4.8), "de 3 a 5 días"},
-                {"Manzana ecológica variedad \"Royal Gala\"", "1 caja de 5Kg",  new Float(20.0),  new Float(4.0), "de 3 a 5 días"},
-                {"Limón ecológico variedad \"fino\"", "1 caja de 5Kg",  new Float(16.0),  new Float(3.2), "de 3 a 5 días"},
-                {"Plátano ecológico", "1 caja de 5Kg",  new Float(22.0),  new Float(4.4), "de 3 a 5 días"},
-                {"Manzana ecológica variedad \"Granny Smith\"", "1 caja de 5Kg",  new Float(20.0),  new Float(4.0), "de 3 a 5 días"}
+                {"", "", null, null, ""},
+                {"", "", null, null, ""},
+                {"", "", null, null, ""},
+                {"", "", null, null, "de 3 a 5 días"}
             },
             new String [] {
                 "Producto", "Cantidad", "Precio", "Precio/Kg", "Plazo de entrega"
@@ -148,35 +147,47 @@ public class VentanaFrutas extends javax.swing.JFrame {
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        jButton8.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(102, 153, 0));
+        jButton8.setText("Añadir al carro");
+        jButton8.setBorder(null);
+        jButton8.setBorderPainted(false);
+        jButton8.setContentAreaFilled(false);
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout panelfondoLayout = new javax.swing.GroupLayout(panelfondo);
         panelfondo.setLayout(panelfondoLayout);
         panelfondoLayout.setHorizontalGroup(
             panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelfondoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
                     .addGroup(panelfondoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 955, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelfondoLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
                         .addComponent(icon)
-                        .addGap(136, 136, 136)
-                        .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                        .addGap(82, 82, 82)
+                        .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 327, Short.MAX_VALUE)
+                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
                         .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(66, 66, 66))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
-                                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton4)
-                                    .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton1)
-                                        .addComponent(jButton3)))
-                                .addGap(75, 75, 75))))))
+                            .addComponent(jButton4)
+                            .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton1)
+                                .addComponent(jButton3)))
+                        .addGap(75, 75, 75))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(66, 66, 66))))
+            .addGroup(panelfondoLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jButton8)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelfondoLayout.setVerticalGroup(
             panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +195,6 @@ public class VentanaFrutas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(icon)
                     .addGroup(panelfondoLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -194,10 +204,15 @@ public class VentanaFrutas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)))
+                        .addComponent(jButton4))
+                    .addGroup(panelfondoLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(icon)))
                 .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(jButton8)
+                .addContainerGap(359, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
@@ -222,20 +237,27 @@ public class VentanaFrutas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaFrutas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCereales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaFrutas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCereales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaFrutas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCereales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaFrutas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCereales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaFrutas().setVisible(true);
+                new VentanaCereales().setVisible(true);
             }
         });
     }
@@ -247,6 +269,7 @@ public class VentanaFrutas extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelfondo;
