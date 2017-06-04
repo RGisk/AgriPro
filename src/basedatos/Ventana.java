@@ -5,7 +5,6 @@
  */
 package basedatos;
 
-import basedatos.VentanaMod;
 import javax.swing.table.DefaultTableModel;
 import static basedatos.Metodos.url;
 import java.sql.Connection;

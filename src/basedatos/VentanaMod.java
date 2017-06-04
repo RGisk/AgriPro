@@ -14,7 +14,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author Nati
+ * @author jquesadaabeijon
  */
 public class VentanaMod extends javax.swing.JFrame {
 

@@ -6,16 +6,10 @@
 package login;
 
 import java.awt.Cursor;
-
-
-
-
-
-
-
+import java.awt.event.KeyEvent;
 /**
  *
- * @author Diego
+ * @author jquesadaabeijon
  */
 public class Log extends javax.swing.JFrame {
 
@@ -37,10 +31,10 @@ public class Log extends javax.swing.JFrame {
 //        }
 //        return 0;
 //    }
-
     public Log() {
         initComponents();
         this.setVisible(true);
+        this.getRootPane().setDefaultButton(acceder);
 
     }
 
@@ -58,10 +52,10 @@ public class Log extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         campoUsuario = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        campoContraseña = new javax.swing.JPasswordField();
         acceder = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        campoContraseña = new javax.swing.JTextField();
+        Registro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -81,6 +75,11 @@ public class Log extends javax.swing.JFrame {
                 accederActionPerformed(evt);
             }
         });
+        acceder.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                accederKeyPressed(evt);
+            }
+        });
 
         cancel.setText("Cancelar");
         cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -97,8 +96,8 @@ public class Log extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoUsuario)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2)
                             .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -129,26 +128,25 @@ public class Log extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 210, -1, -1));
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel3.setText("Registrarse");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Registro.setForeground(new java.awt.Color(0, 0, 204));
+        Registro.setText("Registrarse");
+        Registro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                RegistroMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 400, -1, -1));
+        getContentPane().add(Registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 400, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void RegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistroMouseClicked
 
         Registro_Cliente reg = new Registro_Cliente();
-        reg.show();
         reg.setVisible(true);
         this.dispose();
 
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_RegistroMouseClicked
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
 
@@ -156,9 +154,15 @@ public class Log extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelActionPerformed
 
     private void accederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accederActionPerformed
-
+        Validacion val = new Validacion();
+        val.loguearsePrueba(campoUsuario.getText(), campoContraseña.getText());
+        this.dispose();
 
         System.out.println(campoContraseña.getText());    }//GEN-LAST:event_accederActionPerformed
+
+    private void accederKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_accederKeyPressed
+
+    }//GEN-LAST:event_accederKeyPressed
 
     /**
      * @param args the command line arguments
@@ -200,13 +204,13 @@ public class Log extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Registro;
     private javax.swing.JButton acceder;
-    private javax.swing.JPasswordField campoContraseña;
+    private javax.swing.JTextField campoContraseña;
     private javax.swing.JTextField campoUsuario;
     private javax.swing.JButton cancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

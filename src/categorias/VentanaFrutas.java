@@ -5,9 +5,14 @@
  */
 package categorias;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import basedatos.Metodos;
+import static basedatos.Metodos.url;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 /**
@@ -19,15 +24,30 @@ public class VentanaFrutas extends javax.swing.JFrame {
     /**
      * Creates new form VentanaFrutas
      */
+    
+        
+            
+    public static DefaultTableModel modelo;
+    TableColumnModel column;
+    
     public VentanaFrutas() {
         initComponents();
         
-        TableColumnModel columnModel = tabla.getColumnModel();
-        columnModel.getColumn(0).setPreferredWidth(200);
-        columnModel.getColumn(1).setPreferredWidth(50);
-        columnModel.getColumn(2).setPreferredWidth(50);
-        columnModel.getColumn(3).setPreferredWidth(50);
-        columnModel.getColumn(4).setPreferredWidth(50);
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Producto");
+        modelo.addColumn("Cantidad");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Precio/Kg");
+        this.tabla.setModel(modelo);
+        
+        column = tabla.getColumnModel();
+        column.getColumn(0).setPreferredWidth(200);
+        column.getColumn(1).setPreferredWidth(50);
+        column.getColumn(2).setPreferredWidth(50);
+        column.getColumn(3).setPreferredWidth(50);
+        
+    
+        
 //
 //        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 //        this.setSize((int) d.getWidth(), (int) d.getHeight());
@@ -55,6 +75,7 @@ public class VentanaFrutas extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Frutas ecológicas");
@@ -75,36 +96,24 @@ public class VentanaFrutas extends javax.swing.JFrame {
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Caja de frutas ecológicas variadas", "1 caja de 5Kg",  new Float(24.0),  new Float(4.8), "de 3 a 5 días"},
-                {"Manzana ecológica variedad \"Royal Gala\"", "1 caja de 5Kg",  new Float(20.0),  new Float(4.0), "de 3 a 5 días"},
-                {"Limón ecológico variedad \"fino\"", "1 caja de 5Kg",  new Float(16.0),  new Float(3.2), "de 3 a 5 días"},
-                {"Plátano ecológico", "1 caja de 5Kg",  new Float(22.0),  new Float(4.4), "de 3 a 5 días"},
-                {"Manzana ecológica variedad \"Granny Smith\"", "1 caja de 5Kg",  new Float(20.0),  new Float(4.0), "de 3 a 5 días"}
+                {null, null, null, null}
             },
             new String [] {
-                "Producto", "Cantidad", "Precio", "Precio/Kg", "Plazo de entrega"
+                "Producto", "Cantidad", "Precio", "Precio/Kg"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
+        tabla.setColumnSelectionAllowed(true);
         tabla.setSelectionBackground(new java.awt.Color(51, 204, 0));
         tabla.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         tabla.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabla);
         tabla.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        if (tabla.getColumnModel().getColumnCount() > 0) {
+            tabla.getColumnModel().getColumn(0).setHeaderValue("Producto");
+            tabla.getColumnModel().getColumn(1).setHeaderValue("Cantidad");
+            tabla.getColumnModel().getColumn(2).setHeaderValue("Precio");
+            tabla.getColumnModel().getColumn(3).setHeaderValue("Precio/Kg");
+        }
 
         jLabel1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -147,6 +156,13 @@ public class VentanaFrutas extends javax.swing.JFrame {
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelfondoLayout = new javax.swing.GroupLayout(panelfondo);
         panelfondo.setLayout(panelfondoLayout);
         panelfondoLayout.setHorizontalGroup(
@@ -161,7 +177,7 @@ public class VentanaFrutas extends javax.swing.JFrame {
                         .addComponent(icon)
                         .addGap(136, 136, 136)
                         .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                         .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,6 +192,10 @@ public class VentanaFrutas extends javax.swing.JFrame {
                                         .addComponent(jButton1)
                                         .addComponent(jButton3)))
                                 .addGap(75, 75, 75))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelfondoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(616, 616, 616))
         );
         panelfondoLayout.setVerticalGroup(
             panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,14 +215,34 @@ public class VentanaFrutas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4)))
                 .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(jButton5)
+                .addContainerGap(221, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        modelo.setRowCount(0);
+        
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos";
+        
+            try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt  = conn.createStatement();
+                ResultSet rs    = stmt.executeQuery(sql)){
+            
+            while (rs.next()) {
+                modelo.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+            } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,6 +286,7 @@ public class VentanaFrutas extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelfondo;

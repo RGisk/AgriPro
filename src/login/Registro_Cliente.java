@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Diego
+ * @author jquesadaabeijon
  */
 public class Registro_Cliente extends javax.swing.JFrame {
 

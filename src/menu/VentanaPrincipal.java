@@ -5,11 +5,8 @@
  */
 package menu;
 
-import categorias.VentanaCarne;
+import categorias.VentanaFrutas;
 import categorias.VentanaVerduras;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-
 
 /**
  *
@@ -30,7 +27,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 //        panelfondo.setSize((int) d.getWidth(), (int) d.getHeight());
 //        
 //        this.setBounds((d.width / 2) - (this.getWidth() / 2), (d.height / 2) - (this.getHeight() / 2), 1366, 768);
-        
     }
 
     /**
@@ -43,82 +39,89 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelfondo = new javax.swing.JPanel();
-        btBebidas = new javax.swing.JButton();
-        btFrut = new javax.swing.JButton();
-        titulo = new javax.swing.JLabel();
-        btCarne = new javax.swing.JButton();
+        btBeb = new javax.swing.JButton();
+        btCer = new javax.swing.JButton();
+        btAce = new javax.swing.JButton();
         btHort = new javax.swing.JButton();
-        btFrut1 = new javax.swing.JButton();
-        btFrut2 = new javax.swing.JButton();
-        btCarne1 = new javax.swing.JButton();
-        btFrut3 = new javax.swing.JButton();
+        btFrutas = new javax.swing.JButton();
+        btLact = new javax.swing.JButton();
+        btCarn = new javax.swing.JButton();
+        btPan = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("AgriPro - Venta de productos agrícolas y/o ecológicos");
+        setTitle("MercaTerra - Venta de productos agrícolas y/o ecológicos");
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1366, 720));
+        setPreferredSize(new java.awt.Dimension(1366, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelfondo.setBackground(new java.awt.Color(255, 255, 255));
         panelfondo.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 51)), new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 0), 1, true)));
         panelfondo.setMaximumSize(new java.awt.Dimension(1366, 768));
+        panelfondo.setLayout(null);
 
-        btBebidas.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
-        btBebidas.setForeground(new java.awt.Color(255, 255, 255));
-        btBebidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bebidas.jpeg"))); // NOI18N
-        btBebidas.setText("BEBIDAS");
-        btBebidas.setContentAreaFilled(false);
-        btBebidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btBebidas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btBebidas.setMaximumSize(new java.awt.Dimension(220, 150));
-        btBebidas.setMinimumSize(new java.awt.Dimension(220, 150));
-        btBebidas.setPreferredSize(new java.awt.Dimension(220, 150));
-        btBebidas.addActionListener(new java.awt.event.ActionListener() {
+        btBeb.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btBeb.setForeground(new java.awt.Color(255, 255, 255));
+        btBeb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bebidas.jpeg"))); // NOI18N
+        btBeb.setText("BEBIDAS");
+        btBeb.setContentAreaFilled(false);
+        btBeb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btBeb.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btBeb.setMaximumSize(new java.awt.Dimension(220, 150));
+        btBeb.setMinimumSize(new java.awt.Dimension(220, 150));
+        btBeb.setPreferredSize(new java.awt.Dimension(220, 150));
+        btBeb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btBebidasActionPerformed(evt);
+                btBebActionPerformed(evt);
             }
         });
+        panelfondo.add(btBeb);
+        btBeb.setBounds(1060, 490, 250, 170);
+        btBeb.getAccessibleContext().setAccessibleParent(this);
 
-        btFrut.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
-        btFrut.setForeground(new java.awt.Color(255, 255, 255));
-        btFrut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cereales.jpeg"))); // NOI18N
-        btFrut.setText("<html><p>CEREALES Y LEGUMBRES</p></html>");
-        btFrut.setContentAreaFilled(false);
-        btFrut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btFrut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btFrut.setMaximumSize(new java.awt.Dimension(290, 250));
-        btFrut.setMinimumSize(new java.awt.Dimension(290, 250));
-        btFrut.setPreferredSize(new java.awt.Dimension(220, 150));
-        btFrut.addActionListener(new java.awt.event.ActionListener() {
+        btCer.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btCer.setForeground(new java.awt.Color(255, 255, 255));
+        btCer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cereales.jpeg"))); // NOI18N
+        btCer.setText("<html><p align=\"center\">CEREALES Y LEGUMBRES</p></html>");
+        btCer.setContentAreaFilled(false);
+        btCer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btCer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btCer.setMaximumSize(new java.awt.Dimension(290, 250));
+        btCer.setMinimumSize(new java.awt.Dimension(290, 250));
+        btCer.setPreferredSize(new java.awt.Dimension(220, 150));
+        btCer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btFrutActionPerformed(evt);
+                btCerActionPerformed(evt);
             }
         });
+        panelfondo.add(btCer);
+        btCer.setBounds(730, 240, 250, 170);
 
-        titulo.setFont(new java.awt.Font("Century Schoolbook L", 1, 36)); // NOI18N
-        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo.setText("CATEGORÍAS");
-        titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        btCarne.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
-        btCarne.setForeground(new java.awt.Color(255, 255, 255));
-        btCarne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aceites.jpeg"))); // NOI18N
-        btCarne.setText("ACEITES");
-        btCarne.setContentAreaFilled(false);
-        btCarne.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btCarne.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btCarne.setMaximumSize(new java.awt.Dimension(220, 150));
-        btCarne.setMinimumSize(new java.awt.Dimension(220, 150));
-        btCarne.setPreferredSize(new java.awt.Dimension(220, 150));
-        btCarne.addActionListener(new java.awt.event.ActionListener() {
+        btAce.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btAce.setForeground(new java.awt.Color(255, 255, 255));
+        btAce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aceites.jpeg"))); // NOI18N
+        btAce.setText("ACEITES");
+        btAce.setContentAreaFilled(false);
+        btAce.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btAce.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btAce.setMaximumSize(new java.awt.Dimension(220, 150));
+        btAce.setMinimumSize(new java.awt.Dimension(220, 150));
+        btAce.setPreferredSize(new java.awt.Dimension(220, 150));
+        btAce.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCarneActionPerformed(evt);
+                btAceActionPerformed(evt);
             }
         });
+        panelfondo.add(btAce);
+        btAce.setBounds(730, 490, 250, 170);
 
         btHort.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         btHort.setForeground(new java.awt.Color(255, 255, 255));
         btHort.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hortalizas.jpg"))); // NOI18N
-        btHort.setText("<html><p>VERDURAS Y HORTALIZAS</p></html>");
+        btHort.setText("<html><p align=\"center\">VERDURAS Y HORTALIZAS</p></html>");
+        btHort.setActionCommand("<html><p>VERDURAS</p><p>Y</p><p>HORTALIZAS</p></html>");
         btHort.setAutoscrolls(true);
         btHort.setContentAreaFilled(false);
         btHort.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -131,179 +134,144 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 btHortActionPerformed(evt);
             }
         });
+        panelfondo.add(btHort);
+        btHort.setBounds(390, 240, 250, 170);
 
-        btFrut1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
-        btFrut1.setForeground(new java.awt.Color(255, 255, 255));
-        btFrut1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/frutas.jpg"))); // NOI18N
-        btFrut1.setText("FRUTAS");
-        btFrut1.setContentAreaFilled(false);
-        btFrut1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btFrut1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btFrut1.setMaximumSize(new java.awt.Dimension(290, 250));
-        btFrut1.setMinimumSize(new java.awt.Dimension(290, 250));
-        btFrut1.setPreferredSize(new java.awt.Dimension(250, 180));
-        btFrut1.addActionListener(new java.awt.event.ActionListener() {
+        btFrutas.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btFrutas.setForeground(new java.awt.Color(255, 255, 255));
+        btFrutas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/frutas.jpg"))); // NOI18N
+        btFrutas.setText("FRUTAS");
+        btFrutas.setToolTipText("");
+        btFrutas.setContentAreaFilled(false);
+        btFrutas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btFrutas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btFrutas.setMaximumSize(new java.awt.Dimension(290, 250));
+        btFrutas.setMinimumSize(new java.awt.Dimension(290, 250));
+        btFrutas.setPreferredSize(new java.awt.Dimension(250, 180));
+        btFrutas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btFrut1ActionPerformed(evt);
+                btFrutasActionPerformed(evt);
             }
         });
+        panelfondo.add(btFrutas);
+        btFrutas.setBounds(50, 240, 250, 170);
 
-        btFrut2.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
-        btFrut2.setForeground(new java.awt.Color(255, 255, 255));
-        btFrut2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lacteos.jpeg"))); // NOI18N
-        btFrut2.setText("LÁCTEOS");
-        btFrut2.setContentAreaFilled(false);
-        btFrut2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btFrut2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btFrut2.setMaximumSize(new java.awt.Dimension(290, 250));
-        btFrut2.setMinimumSize(new java.awt.Dimension(290, 250));
-        btFrut2.setPreferredSize(new java.awt.Dimension(220, 150));
-        btFrut2.addActionListener(new java.awt.event.ActionListener() {
+        btLact.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btLact.setForeground(new java.awt.Color(255, 255, 255));
+        btLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lacteos.jpeg"))); // NOI18N
+        btLact.setText("LÁCTEOS");
+        btLact.setContentAreaFilled(false);
+        btLact.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btLact.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btLact.setMaximumSize(new java.awt.Dimension(290, 250));
+        btLact.setMinimumSize(new java.awt.Dimension(290, 250));
+        btLact.setPreferredSize(new java.awt.Dimension(220, 150));
+        btLact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btFrut2ActionPerformed(evt);
+                btLactActionPerformed(evt);
             }
         });
+        panelfondo.add(btLact);
+        btLact.setBounds(390, 490, 250, 170);
 
-        btCarne1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
-        btCarne1.setForeground(new java.awt.Color(255, 255, 255));
-        btCarne1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/carnes.jpg"))); // NOI18N
-        btCarne1.setText("CARNES");
-        btCarne1.setContentAreaFilled(false);
-        btCarne1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btCarne1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btCarne1.setMaximumSize(new java.awt.Dimension(220, 150));
-        btCarne1.setMinimumSize(new java.awt.Dimension(220, 150));
-        btCarne1.setPreferredSize(new java.awt.Dimension(220, 150));
-        btCarne1.addActionListener(new java.awt.event.ActionListener() {
+        btCarn.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btCarn.setForeground(new java.awt.Color(255, 255, 255));
+        btCarn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/carnes.jpg"))); // NOI18N
+        btCarn.setText("CARNES");
+        btCarn.setContentAreaFilled(false);
+        btCarn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btCarn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btCarn.setMaximumSize(new java.awt.Dimension(220, 150));
+        btCarn.setMinimumSize(new java.awt.Dimension(220, 150));
+        btCarn.setPreferredSize(new java.awt.Dimension(220, 150));
+        btCarn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCarne1ActionPerformed(evt);
+                btCarnActionPerformed(evt);
             }
         });
+        panelfondo.add(btCarn);
+        btCarn.setBounds(1060, 240, 250, 170);
 
-        btFrut3.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
-        btFrut3.setForeground(new java.awt.Color(255, 255, 255));
-        btFrut3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/panaderia.jpeg"))); // NOI18N
-        btFrut3.setText("PANADERÍA");
-        btFrut3.setContentAreaFilled(false);
-        btFrut3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btFrut3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btFrut3.setMaximumSize(new java.awt.Dimension(290, 250));
-        btFrut3.setMinimumSize(new java.awt.Dimension(290, 250));
-        btFrut3.setPreferredSize(new java.awt.Dimension(220, 150));
-        btFrut3.addActionListener(new java.awt.event.ActionListener() {
+        btPan.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
+        btPan.setForeground(new java.awt.Color(255, 255, 255));
+        btPan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/panaderia.jpeg"))); // NOI18N
+        btPan.setText("PANADERÍA");
+        btPan.setContentAreaFilled(false);
+        btPan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btPan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btPan.setMaximumSize(new java.awt.Dimension(290, 250));
+        btPan.setMinimumSize(new java.awt.Dimension(290, 250));
+        btPan.setPreferredSize(new java.awt.Dimension(220, 150));
+        btPan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btFrut3ActionPerformed(evt);
+                btPanActionPerformed(evt);
             }
         });
+        panelfondo.add(btPan);
+        btPan.setBounds(50, 490, 250, 170);
 
-        javax.swing.GroupLayout panelfondoLayout = new javax.swing.GroupLayout(panelfondo);
-        panelfondo.setLayout(panelfondoLayout);
-        panelfondoLayout.setHorizontalGroup(
-            panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelfondoLayout.createSequentialGroup()
-                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelfondoLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btFrut3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btFrut1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(86, 86, 86)
-                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btHort, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btFrut2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(108, 108, 108)
-                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btFrut, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btCarne, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(79, 79, 79)
-                        .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btCarne1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btBebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelfondoLayout.createSequentialGroup()
-                        .addGap(541, 541, 541)
-                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(237, 237, 237))
-        );
-        panelfondoLayout.setVerticalGroup(
-            panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelfondoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btCarne1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelfondoLayout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btHort, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btFrut, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(btFrut1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addGroup(panelfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btBebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btCarne, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btFrut2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btFrut3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(236, 236, 236))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo1.png"))); // NOI18N
+        panelfondo.add(jLabel1);
+        jLabel1.setBounds(540, 20, 290, 200);
 
-        btBebidas.getAccessibleContext().setAccessibleParent(this);
+        titulo.setFont(new java.awt.Font("Century Schoolbook L", 1, 36)); // NOI18N
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/principal1.jpg"))); // NOI18N
+        titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelfondo.add(titulo);
+        titulo.setBounds(0, 0, 1440, 900);
 
         getContentPane().add(panelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btBebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBebidasActionPerformed
-        
-        
-        
-    }//GEN-LAST:event_btBebidasActionPerformed
+    private void btBebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBebActionPerformed
 
-    private void btFrutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrutActionPerformed
-   
-        
-    }//GEN-LAST:event_btFrutActionPerformed
 
-    private void btCarneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarneActionPerformed
+    }//GEN-LAST:event_btBebActionPerformed
 
-        
-        
-    }//GEN-LAST:event_btCarneActionPerformed
+    private void btCerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCerActionPerformed
+
+
+    }//GEN-LAST:event_btCerActionPerformed
+
+    private void btAceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAceActionPerformed
+
+
+    }//GEN-LAST:event_btAceActionPerformed
 
     private void btHortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHortActionPerformed
-        
+
         VentanaVerduras hort = new VentanaVerduras();
         hort.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_btHortActionPerformed
 
-    private void btFrut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrut1ActionPerformed
-             
-        VentanaCarne frut = new VentanaCarne();
+    private void btFrutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrutasActionPerformed
+
+        VentanaFrutas frut = new VentanaFrutas();
         frut.setVisible(true);
         this.dispose();
-        
-    }//GEN-LAST:event_btFrut1ActionPerformed
+    }//GEN-LAST:event_btFrutasActionPerformed
 
-    private void btFrut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrut2ActionPerformed
+    private void btLactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btFrut2ActionPerformed
+    }//GEN-LAST:event_btLactActionPerformed
 
-    private void btCarne1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarne1ActionPerformed
+    private void btCarnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btCarne1ActionPerformed
+    }//GEN-LAST:event_btCarnActionPerformed
 
-    private void btFrut3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFrut3ActionPerformed
+    private void btPanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btFrut3ActionPerformed
+    }//GEN-LAST:event_btPanActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -336,15 +304,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btBebidas;
-    private javax.swing.JButton btCarne;
-    private javax.swing.JButton btCarne1;
-    private javax.swing.JButton btFrut;
-    private javax.swing.JButton btFrut1;
-    private javax.swing.JButton btFrut2;
-    private javax.swing.JButton btFrut3;
+    private javax.swing.JButton btAce;
+    private javax.swing.JButton btBeb;
+    private javax.swing.JButton btCarn;
+    private javax.swing.JButton btCer;
+    private javax.swing.JButton btFrutas;
     private javax.swing.JButton btHort;
+    private javax.swing.JButton btLact;
+    private javax.swing.JButton btPan;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel panelfondo;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
-}
+        }
+                
+
+

@@ -13,12 +13,12 @@ import javax.swing.JProgressBar;
 
 /**
  *
- * @author Vinyard82
+ * @author jquesadaabeijon
  */
 public class HiloProgreso extends Thread {
 
     JProgressBar barra;
-    private static int retraso = 100;
+    private static int retraso = 25;
 
     public HiloProgreso(JProgressBar barra) {
         this.barra = barra;
