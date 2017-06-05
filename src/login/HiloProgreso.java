@@ -7,8 +7,6 @@ package login;
 
 import java.awt.EventQueue;
 import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JProgressBar;
 
 /**
@@ -18,7 +16,7 @@ import javax.swing.JProgressBar;
 public class HiloProgreso extends Thread {
 
     JProgressBar barra;
-    private static int retraso = 25;
+    private static final int intervalo = 25;
 
     public HiloProgreso(JProgressBar barra) {
         this.barra = barra;
@@ -29,20 +27,16 @@ public class HiloProgreso extends Thread {
         int minimo = barra.getMinimum();
         int maximo = barra.getMaximum();
 
-        Runnable ejecutor = new Runnable() {
-            @Override
-            public void run() {
-                int valorActual = barra.getValue();
-                barra.setValue(valorActual + 1);
-            }
+        Runnable ejecutor = () -> {
+            int valorActual = barra.getValue();
+            barra.setValue(valorActual + 1);
         };
 
         for (int i = minimo; i < maximo; i++) {
             try {
                 EventQueue.invokeAndWait(ejecutor);
-                Thread.sleep(retraso);
-            } catch (InterruptedException ex) {
-            } catch (InvocationTargetException ex) {
+                Thread.sleep(intervalo);
+            } catch (InterruptedException | InvocationTargetException ex) {
             }
         }
     }

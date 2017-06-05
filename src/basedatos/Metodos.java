@@ -5,13 +5,21 @@
  */
 package basedatos;
 
-import static categorias.VentanaFrutas.modelo;
+import static categorias.VentanaAceites.modeloAce;
+import static categorias.VentanaBebidas.modeloBeb;
+import static categorias.VentanaCarne.modeloCar;
+import static categorias.VentanaCereales.modeloCer;
+import static login.Registro_Productos.modeloReg;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import static categorias.VentanaFrutas.modeloFrut;
+import static categorias.VentanaLacteos.modeloLac;
+import static categorias.VentanaPan.modeloPan;
+import static categorias.VentanaVerduras.modeloVerd;
 
 /**
  *
@@ -95,20 +103,148 @@ public class Metodos {
         }
     }
 
-    public void tablaFrutas() {
-        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='frutas'";
+    public void tablaMod() {
+        String sql = "SELECT id, categoria, empresa, producto, cantidad, precio, preciokilo FROM productos";
 
         try (Connection conn = DriverManager.getConnection(url);
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                modelo.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+                modeloReg.addRow(new Object[]{rs.getInt("id"), rs.getString("categoria"), rs.getString("empresa"), rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
             }
             rs.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        
+    }
+
+    public void tablaFrutas() {
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='Frutas'";
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                modeloFrut.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public void tablaVerduras() {
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='Verduras'";
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                modeloVerd.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void tablaCereales() {
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='Cereales'";
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                modeloCer.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void tablaCarnes() {
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='Carnes'";
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                modeloCar.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void tablaPan() {
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='Pan'";
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                modeloPan.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void tablaLacteos() {
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='Lacteos'";
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                modeloLac.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void tablaAceites() {
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='Aceites'";
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                modeloAce.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void tablaBebidas() {
+        String sql = "SELECT producto,cantidad,precio,preciokilo FROM productos WHERE categoria='Bebidas'";
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                modeloBeb.addRow(new Object[]{rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

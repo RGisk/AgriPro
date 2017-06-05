@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package login;
-
-import java.awt.Cursor;
-import java.awt.event.KeyEvent;
 /**
  *
  * @author jquesadaabeijon

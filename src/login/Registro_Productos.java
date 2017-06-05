@@ -5,6 +5,7 @@
  */
 package login;
 
+import basedatos.Metodos;
 import javax.swing.table.DefaultTableModel;
 import static basedatos.Metodos.url;
 import java.sql.Connection;
@@ -13,6 +14,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -23,19 +27,43 @@ public class Registro_Productos extends javax.swing.JFrame {
     /**
      * Creates new form Ventana
      */
-    DefaultTableModel modelo;
-
+    public static DefaultTableModel modeloReg;
+    TableColumnModel column;
+    
     public Registro_Productos() {
         initComponents();
-        modelo = new DefaultTableModel();
-        modelo.addColumn("ID");
-        modelo.addColumn("Categoría");
-        modelo.addColumn("Empresa");
-        modelo.addColumn("Producto");
-        modelo.addColumn("Cantidad");
-        modelo.addColumn("Precio");
-        modelo.addColumn("Precio/Kilo");
-        this.tabla.setModel(modelo);
+        modeloReg = new DefaultTableModel();
+        modeloReg.addColumn("ID");
+        modeloReg.addColumn("Categoría");
+        modeloReg.addColumn("Empresa");
+        modeloReg.addColumn("Producto");
+        modeloReg.addColumn("Cantidad");
+        modeloReg.addColumn("Precio");
+        modeloReg.addColumn("Precio/Kilo");
+        this.tabla.setModel(modeloReg);
+        
+        column = tabla.getColumnModel();
+        column.getColumn(0).setPreferredWidth(10);
+        column.getColumn(1).setPreferredWidth(75);
+        column.getColumn(2).setPreferredWidth(75);
+        column.getColumn(3).setPreferredWidth(250);
+        column.getColumn(4).setPreferredWidth(100);
+        column.getColumn(5).setPreferredWidth(10);
+        column.getColumn(6).setPreferredWidth(10);
+        
+        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+        tcr.setHorizontalAlignment(SwingConstants.CENTER);
+        tabla.getColumnModel().getColumn(0).setCellRenderer(tcr);
+        tabla.getColumnModel().getColumn(1).setCellRenderer(tcr);
+        tabla.getColumnModel().getColumn(2).setCellRenderer(tcr);
+        tabla.getColumnModel().getColumn(3).setCellRenderer(tcr);
+        tabla.getColumnModel().getColumn(4).setCellRenderer(tcr);
+        tabla.getColumnModel().getColumn(5).setCellRenderer(tcr);
+        tabla.getColumnModel().getColumn(6).setCellRenderer(tcr);
+        
+        
+        Metodos met = new Metodos();
+        met.tablaMod();
 
     }
 
@@ -54,14 +82,11 @@ public class Registro_Productos extends javax.swing.JFrame {
         botonBorrar = new javax.swing.JButton();
         campoBorrar = new javax.swing.JTextField();
         etiqBorrar = new javax.swing.JLabel();
-        separador = new javax.swing.JSeparator();
-        botonBD = new javax.swing.JButton();
         botonDel = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         campoEmpresa = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        campoCategoria = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -71,6 +96,7 @@ public class Registro_Productos extends javax.swing.JFrame {
         registro = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         campoCantidad = new javax.swing.JTextField();
+        campoCategoria = new javax.swing.JComboBox<>();
         cancel = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -98,13 +124,6 @@ public class Registro_Productos extends javax.swing.JFrame {
 
         etiqBorrar.setText("Borrar ID:");
 
-        botonBD.setText("Cargar Productos");
-        botonBD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBDActionPerformed(evt);
-            }
-        });
-
         botonDel.setText("Borrar todo");
         botonDel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +150,8 @@ public class Registro_Productos extends javax.swing.JFrame {
 
         jLabel3.setText("Cantidad");
 
+        campoCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Frutas", "Verduras", "Cereales", "Carnes", "Pan", "Lacteos", "Aceites", "Bebidas" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -147,19 +168,19 @@ public class Registro_Productos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(campoEmpresa)
-                    .addComponent(campoCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                     .addComponent(campoPrecio)
                     .addComponent(campoPrecioKilo)
                     .addComponent(campoProducto)
                     .addComponent(campoCantidad)
-                    .addComponent(registro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(registro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                    .addComponent(campoCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(campoCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -200,62 +221,54 @@ public class Registro_Productos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(etiqBorrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonBorrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonDel)
-                        .addGap(13, 13, 13))
-                    .addComponent(separador, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 951, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(149, 149, 149))
             .addGroup(layout.createSequentialGroup()
-                .addGap(373, 373, 373)
-                .addComponent(botonBD, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(etiqBorrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(botonBorrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonDel)
+                                .addGap(13, 13, 13))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 951, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(93, 93, 93))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(botonBD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etiqBorrar)
-                            .addComponent(botonBorrar)
-                            .addComponent(botonDel))
-                        .addGap(29, 29, 29)
-                        .addComponent(cancel)
-                        .addGap(24, 24, 24))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiqBorrar)
+                    .addComponent(botonBorrar)
+                    .addComponent(botonDel))
+                .addGap(29, 29, 29)
+                .addComponent(cancel)
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -263,7 +276,7 @@ public class Registro_Productos extends javax.swing.JFrame {
 
     private void botonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBorrarActionPerformed
 
-        modelo.setRowCount(0);
+        modeloReg.setRowCount(0);
 
         String sql = "DELETE FROM productos WHERE id = " + campoBorrar.getText();
 
@@ -272,7 +285,7 @@ public class Registro_Productos extends javax.swing.JFrame {
                 ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                modelo.removeRow(rs.getInt("id"));
+                modeloReg.removeRow(rs.getInt("id"));
             }
             rs.close();
         } catch (SQLException e) {
@@ -286,7 +299,7 @@ public class Registro_Productos extends javax.swing.JFrame {
                 ResultSet rs = stmt.executeQuery(sql2)) {
 
             while (rs.next()) {
-                modelo.addRow(new Object[]{rs.getInt("id"), rs.getString("categoria"), rs.getString("empresa"), rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+                modeloReg.addRow(new Object[]{rs.getInt("id"), rs.getString("categoria"), rs.getString("empresa"), rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
             }
             rs.close();
         } catch (SQLException e) {
@@ -296,26 +309,6 @@ public class Registro_Productos extends javax.swing.JFrame {
         campoBorrar.setText(null);
 
     }//GEN-LAST:event_botonBorrarActionPerformed
-
-    private void botonBDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBDActionPerformed
-
-        modelo.setRowCount(0);
-
-        String sql = "SELECT id, categoria, empresa, producto, cantidad, precio, preciokilo FROM productos";
-
-        try (Connection conn = DriverManager.getConnection(url);
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(sql)) {
-
-            while (rs.next()) {
-                modelo.addRow(new Object[]{rs.getInt("id"), rs.getString("categoria"), rs.getString("empresa"), rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
-            }
-            rs.close();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
-    }//GEN-LAST:event_botonBDActionPerformed
 
     private void botonDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDelActionPerformed
 
@@ -330,24 +323,24 @@ public class Registro_Productos extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
 
-        modelo.setRowCount(0);
+        modeloReg.setRowCount(0);
     }//GEN-LAST:event_botonDelActionPerformed
 
     private void registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroActionPerformed
 
-        String categoria = campoCategoria.getText();
+        Object categoria = campoCategoria.getSelectedItem();
         String empresa = campoEmpresa.getText();
         String producto = campoProducto.getText();
         String cantidad = campoCantidad.getText();
         String precio = campoPrecio.getText();
         String preciokilo = campoPrecioKilo.getText();
-        modelo.setRowCount(0);
+        modeloReg.setRowCount(0);
 
         String sql = "INSERT INTO Productos(categoria,empresa,producto,cantidad,precio,preciokilo) VALUES(?,?,?,?,?,?)";
 
         try (Connection conn = DriverManager.getConnection(url);
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, categoria);
+            pstmt.setObject(1, categoria);
             pstmt.setString(2, empresa);
             pstmt.setString(3, producto);
             pstmt.setString(4, cantidad);
@@ -366,14 +359,14 @@ public class Registro_Productos extends javax.swing.JFrame {
                 ResultSet rs = stmt.executeQuery(sql2)) {
 
             while (rs.next()) {
-                modelo.addRow(new Object[]{rs.getInt("id"), rs.getString("categoria"), rs.getString("empresa"), rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
+                modeloReg.addRow(new Object[]{rs.getInt("id"), rs.getString("categoria"), rs.getString("empresa"), rs.getString("producto"), rs.getString("cantidad"), rs.getString("precio"), rs.getString("preciokilo")});
             }
             rs.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
-        campoCategoria.setText(null);
+        campoCategoria.setSelectedItem("Frutas");
         campoEmpresa.setText(null);
         campoProducto.setText(null);
         campoCantidad.setText(null);
@@ -426,12 +419,11 @@ public class Registro_Productos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonBD;
     private javax.swing.JButton botonBorrar;
     private javax.swing.JButton botonDel;
     private javax.swing.JTextField campoBorrar;
     private javax.swing.JTextField campoCantidad;
-    private javax.swing.JTextField campoCategoria;
+    private javax.swing.JComboBox<String> campoCategoria;
     private javax.swing.JTextField campoEmpresa;
     private javax.swing.JTextField campoPrecio;
     private javax.swing.JTextField campoPrecioKilo;
@@ -449,7 +441,6 @@ public class Registro_Productos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton registro;
-    private javax.swing.JSeparator separador;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }

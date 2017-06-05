@@ -5,7 +5,6 @@
  */
 package login;
 
-import basedatos.*;
 import static basedatos.Metodos.url;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -41,7 +40,6 @@ public class Modificar_Productos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         campoEmp = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        campoCat = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         btMod = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -50,6 +48,10 @@ public class Modificar_Productos extends javax.swing.JFrame {
         campoPrecioKg = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        campoCat = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        campoCant = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MODIFICAR ELEMENTO");
@@ -75,6 +77,17 @@ public class Modificar_Productos extends javax.swing.JFrame {
 
         jLabel7.setText("Precio/Kg:");
 
+        jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        campoCat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Frutas", "Verduras", "Cereales", "Carnes", "Pan", "Lacteos", "Aceites", "Bebidas" }));
+
+        jLabel8.setText("Cantidad:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,24 +108,28 @@ public class Modificar_Productos extends javax.swing.JFrame {
                         .addGap(0, 43, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel6)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel6)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(campoCat, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                    .addComponent(campoEmp)
+                    .addComponent(campoEmp, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                     .addComponent(campoProd)
                     .addComponent(campoPVP)
-                    .addComponent(campoPrecioKg))
+                    .addComponent(campoPrecioKg)
+                    .addComponent(campoCat, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(campoCant))
                 .addGap(54, 54, 54))
             .addGroup(layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(btMod, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(btMod, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -127,8 +144,8 @@ public class Modificar_Productos extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(campoCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -137,6 +154,10 @@ public class Modificar_Productos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(campoCant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoPVP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,9 +166,11 @@ public class Modificar_Productos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoPrecioKg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addGap(27, 27, 27)
-                .addComponent(btMod, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btMod)
+                    .addComponent(jButton1))
+                .addGap(38, 38, 38))
         );
 
         pack();
@@ -155,7 +178,7 @@ public class Modificar_Productos extends javax.swing.JFrame {
 
     private void btModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModActionPerformed
         
-        String sql = "UPDATE productos SET categoria='"+campoCat.getText()+"', empresa='"+campoEmp.getText()+"', producto='"+campoProd.getText()+"', precio='"+campoPVP.getText()+"', preciokilo='"+campoPrecioKg.getText()+"' WHERE id = " +modID.getText();
+        String sql = "UPDATE productos SET categoria='"+campoCat.getSelectedItem()+"', empresa='"+campoEmp.getText()+"', producto='"+campoProd.getText()+"', cantidad='"+campoCant.getText()+"', precio='"+campoPVP.getText()+"', preciokilo='"+campoPrecioKg.getText()+"' WHERE id = " +modID.getText();
         System.out.println(sql);
         try (Connection conn = DriverManager.getConnection(url);
             Statement stmt  = conn.createStatement();
@@ -169,6 +192,10 @@ public class Modificar_Productos extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_btModActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,11 +235,13 @@ public class Modificar_Productos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btMod;
-    private javax.swing.JTextField campoCat;
+    private javax.swing.JTextField campoCant;
+    private javax.swing.JComboBox<String> campoCat;
     private javax.swing.JTextField campoEmp;
     private javax.swing.JTextField campoPVP;
     private javax.swing.JTextField campoPrecioKg;
     private javax.swing.JTextField campoProd;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -220,6 +249,7 @@ public class Modificar_Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField modID;
     // End of variables declaration//GEN-END:variables

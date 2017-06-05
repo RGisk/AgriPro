@@ -53,8 +53,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MercaTerra - Venta de productos agrícolas y/o ecológicos");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(1366, 720));
-        setPreferredSize(new java.awt.Dimension(1366, 720));
+        setMinimumSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelfondo.setBackground(new java.awt.Color(255, 255, 255));
