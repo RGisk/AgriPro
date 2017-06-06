@@ -51,7 +51,7 @@ public class Log extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         acceder = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
-        campoContraseña = new javax.swing.JTextField();
+        campoPass = new javax.swing.JPasswordField();
         Registro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,11 +72,6 @@ public class Log extends javax.swing.JFrame {
                 accederActionPerformed(evt);
             }
         });
-        acceder.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                accederKeyPressed(evt);
-            }
-        });
 
         cancel.setText("Cancelar");
         cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -93,11 +88,11 @@ public class Log extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(campoUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2)
-                            .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(campoPass)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(acceder)
@@ -115,7 +110,7 @@ public class Log extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(campoPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(acceder)
@@ -152,14 +147,9 @@ public class Log extends javax.swing.JFrame {
 
     private void accederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accederActionPerformed
         Validacion val = new Validacion();
-        val.loguearsePrueba(campoUsuario.getText(), campoContraseña.getText());
+        val.loguearsePrueba(campoUsuario.getText(), campoPass.getText());
         this.dispose();
-
-        System.out.println(campoContraseña.getText());    }//GEN-LAST:event_accederActionPerformed
-
-    private void accederKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_accederKeyPressed
-
-    }//GEN-LAST:event_accederKeyPressed
+    }//GEN-LAST:event_accederActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,7 +193,7 @@ public class Log extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Registro;
     private javax.swing.JButton acceder;
-    private javax.swing.JTextField campoContraseña;
+    private javax.swing.JPasswordField campoPass;
     private javax.swing.JTextField campoUsuario;
     private javax.swing.JButton cancel;
     private javax.swing.JLabel jLabel1;

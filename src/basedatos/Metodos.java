@@ -247,4 +247,8 @@ public class Metodos {
             System.out.println(e.getMessage());
         }
     }
+    
+    public void tablaCompra() {
+        //Aquí es donde tengo pensado hacer el método de pasar los productos al carrito.
+    }
 }

@@ -82,7 +82,7 @@
                   <Component id="user_name" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="24" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -108,7 +108,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="tienda">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ir a la tienda"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p align=&quot;center&quot;&gt;Ir a la&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;tienda&lt;/p&gt;&lt;/html&gt;"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tiendaActionPerformed"/>
@@ -116,7 +117,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="anhadir">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A&#xf1;adir productos"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p align=&quot;center&quot;&gt;A&#xf1;adir&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;productos&lt;/p&gt;&lt;/html&gt;"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="anhadirActionPerformed"/>
@@ -124,7 +126,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Modificar productos"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p align=&quot;center&quot;&gt;Modificar&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;productos&lt;/p&gt;&lt;/html&gt;"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -132,7 +135,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="logout">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Log Out"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;p align=&quot;center&quot;&gt;Log&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Out&lt;/p&gt;&lt;/html&gt;"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutActionPerformed"/>
