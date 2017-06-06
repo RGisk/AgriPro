@@ -1,5 +1,5 @@
 
-package agripro;
+package mercaterra;
 
 
 import basedatos.Metodos;
@@ -8,7 +8,7 @@ import login.Intro;
  *
  * @author jquesadaabeijon
  */
-public class AgriPro {
+public class MercaTerra {
     
     public static void main(String[] args) {
         
